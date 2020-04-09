@@ -1,0 +1,175 @@
+.feedback {
+  width: 877px;
+  display: flex;
+  margin-left: 173px;
+
+  &-wrapper {
+    width: 100%;
+    height: 547px;
+    padding: 20px 50px;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url(../img/review.png);
+      width: 350px;
+      height: 457px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      bottom: 90px;
+      left: 50px;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(../../special/img/zigzag-line.png);
+      width: 100%;
+      height: 23px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    text-align: justify;
+    width: 696px;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  &__block {
+    font-size: 16px;
+    margin-top: 60px;
+  }
+
+  &__discription {
+    line-height: 30px;
+  }
+
+  &__sign {
+    margin-top: 20px;
+
+    &-name {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &-link {
+      cursor: pointer;
+      text-decoration: none;
+      color: #444444;
+      &:hover {
+        color: #46c1ae;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+  }
+
+  &__more {
+    display: flex;
+    justify-content: space-between;
+    margin: 190px 19px auto 19px;
+    &-arrow {
+      border: none;
+      background-color: white;
+      cursor: pointer;
+      outline: none;
+
+      &:disabled {
+        opacity: 0.3;
+
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+.modal {
+  font-family: "Roboto", sans-serif;
+  &__wrapper {
+    padding: 30px 15px 0 15px;
+  }
+  &__data {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__name {
+    text-align: justify;
+    font-weight: 700;
+    font-size: 18px;
+
+    &-item {
+      margin: 10px 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__input {
+    margin-left: 20px;
+
+    &-item {
+      margin-bottom: 5px;
+
+      & input {
+        width: 260px;
+        height: 30px;
+        font-size: 18px;
+        border: none;
+        border-bottom: 1px solid #000000;
+        outline: none;
+
+        &:hover {
+          border-bottom: 1px solid #62d1ba;
+        }
+        &:focus {
+          border-bottom: 1px solid #62d1ba;
+        }
+      }
+    }
+  }
+
+  &__feedback {
+    margin-top: 15px;
+
+    & textarea {
+      font-size: 18px;
+      border: 1px solid #444444;
+      outline: none;
+
+      &:hover {
+        border: 1px solid #62d1ba;
+      }
+      &:focus {
+        border: 1px solid #62d1ba;
+      }
+    }
+  }
+
+  &__send {
+    width: 200px;
+    margin: 20px 150px 30px 150px;
+  }
+}

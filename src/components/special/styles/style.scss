@@ -1,0 +1,115 @@
+.special {
+  width: 100%;
+  padding: 54px 50px 100px 50px;
+  position: relative;
+
+  &__wrapper {
+    width: 290px;
+    margin: 55px auto auto 175px;
+  }
+
+  &::after {
+    content: "";
+    background: url(../img/triple-set.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 525px;
+    height: 636px;
+    position: absolute;
+    top: 54px;
+    right: 50px;
+    z-index: -1;
+  }
+
+  &::before {
+    content: "";
+    background-image: url(../img/zigzag-line.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 23px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__header {
+    display: flex;
+    margin: 62px auto auto 49px;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 59px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+  }
+
+  &__sign {
+    font-size: 16px;
+    font-weight: 700;
+    width: 66px;
+    margin-right: 60px;
+    color: #63d1bb;
+  }
+
+  &__info {
+    width: 282px;
+    display: flex;
+    flex-direction: column;
+    color: #444444;
+    text-align: justify;
+    line-height: 30px;
+  }
+
+  &__list {
+    width: 291px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 58px;
+    color: #444444;
+    text-align: justify;
+  }
+
+  &__item {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #8080803b;
+
+    &-name {
+      width: 70px;
+      margin-right: 30px;
+    }
+  }
+
+  &__price {
+    color: #444444;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    width: 282px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  }
+
+  &__button {
+    color: #444444;
+    font-family: "Roboto", sans-serif;
+    width: 292px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #464242;
+      color: white;
+    }
+  }
+}

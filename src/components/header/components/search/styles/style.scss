@@ -1,0 +1,24 @@
+.search {
+  border-left: 1px solid #8080803b;
+  height: 88px;
+  width: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #8080803b;
+  cursor: pointer;
+  margin-left: auto;
+
+  &:hover {
+    & .search__img {
+      background-image: url(../Img/search.svg_hvr.png);
+    }
+  }
+
+  &__img {
+    width: 18px;
+    height: 19px;
+    background-image: url(../Img/search.svg.png);
+    background-repeat: no-repeat;
+  }
+}

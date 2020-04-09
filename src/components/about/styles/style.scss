@@ -1,0 +1,43 @@
+.about {
+  width: 670px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 157px;
+
+  &-wrapper {
+    width: 100%;
+    padding: 69px;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    min-height: 411px;
+  }
+
+  &__block {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__item {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
