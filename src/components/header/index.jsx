@@ -5,7 +5,7 @@ import Search from "./components/search";
 import "./stlyles/style.scss";
 import Logo from "./Img/mishka-logo-desktop.svg.png";
 
-const Header = () => {
+const Header = ({ quantity }) => {
   return (
     <header className="header">
       <Menu />
@@ -13,7 +13,7 @@ const Header = () => {
         <img src={Logo} alt="Логотип" />
       </div>
       <Search></Search>
-      <Basket />
+      <Basket quantity={quantity} />
     </header>
   );
 };

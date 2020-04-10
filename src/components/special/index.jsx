@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/style.scss";
 
-const Special = () => {
+const Special = ({ quantity, setQuantity }) => {
   return (
     <div className="special">
       <div className="special__header">
@@ -30,8 +30,37 @@ const Special = () => {
           </div>
         </div>
         <div className="special__price">Цена: 990 руб.</div>
-        <button className="special__button">ЗАКАЗАТЬ</button>
+        {quantity < 1 ? (
+          <button className="button" onClick={() => setQuantity(quantity + 1)}>
+            ЗАКАЗАТЬ
+          </button>
+        ) : (
+          <div className="special__order">
+            <button
+              className="special__order-item"
+              onClick={() => setQuantity(quantity - 1)}
+            >
+              -
+            </button>
+            <div className="special__order-number">{quantity}</div>
+            <button
+              className="special__order-item"
+              onClick={() => setQuantity(quantity + 1)}
+              disabled={quantity === 15}
+            >
+              +
+            </button>
+          </div>
+        )}
       </div>
+      {quantity === 15 ? (
+        <div className="special__warning">
+          К сожалению, единовременно доступно к заказу не более 15 штук одного
+          изделия. Для изготовления большего количества изделий обратитесь к
+          менеджеру по телефону{" "}
+          <a href="tel:+79671807915"> +7(912) 345-67-80</a>
+        </div>
+      ) : null}
     </div>
   );
 };

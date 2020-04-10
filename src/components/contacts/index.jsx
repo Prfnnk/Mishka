@@ -12,7 +12,12 @@ const Contacts = () => {
             <div className="contacts__name-item">адрес:</div>
           </div>
           <div className="contacts__address">
-            <div className="contacts__address-link">info@mimimishkashop.ru</div>
+            <a
+              href="mailto:parfenenkoma@gmail.com?subject=Маша, классный сайт!"
+              className="contacts__address-link"
+            >
+              info@mimimishkashop.ru
+            </a>
             <div className="contacts__address-item">
               г. Санкт-Петербург, <br />
               ул. Большая Конюшенная, <br />
@@ -20,7 +25,14 @@ const Contacts = () => {
             </div>
           </div>
         </div>
-        <button className="button">НАПИШИТЕ НАМ</button>
+        <div className="contacts__button-block">
+          <a
+            href="mailto:parfenenkoma@gmail.com?subject=Вопрос по Мишке"
+            className="button"
+          >
+            НАПИШИТЕ НАМ
+          </a>
+        </div>
       </div>
       <div className="contacts__map">
         <iframe

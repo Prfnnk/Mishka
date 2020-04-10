@@ -3,6 +3,7 @@ import "./styles/style.scss";
 import LeftArrow from "./img/huge-arrow-left.png";
 import RightArrow from "./img/huge-arrow-right.png";
 import Modal from "../modal";
+import { useEffect } from "react";
 
 const feedbackList = [
   {
@@ -43,6 +44,17 @@ const Feedback = () => {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
   const [discription, setDiscription] = useState("");
+  const [getFeedback, setGetFeedback] = useState(true);
+
+  useEffect(() => {
+    if (!showModal) {
+      setName("");
+      setLink("");
+      setDiscription("");
+      setGetFeedback(true);
+    }
+  }, [showModal]);
+
   const onSubmit = () => {
     const newFeedback = {
       discription,
@@ -50,7 +62,7 @@ const Feedback = () => {
       link
     };
     feedbackList.push(newFeedback);
-    setShowModal(false);
+    setGetFeedback(false);
     setName("");
     setLink("");
     setDiscription("");
@@ -103,49 +115,59 @@ const Feedback = () => {
         {showModal ? (
           <Modal onClose={setShowModal}>
             <div className="modal__wrapper">
-              <div className="modal__data">
-                <div className="modal__name">
-                  <div className="modal__name-item">Имя:</div>
-                  <div className="modal__name-item">Instagram:</div>
-                  <div className="modal__name-item">Отзыв:</div>
-                </div>
-                <div className="modal__input">
-                  <div className="modal__input-item">
-                    <input
-                      type="text"
-                      placeholder="Мишка Мишкин"
-                      value={name}
-                      onChange={e => setName(e.target.value)}
-                    />
+              {getFeedback ? (
+                <div>
+                  <div className="modal__data">
+                    <div className="modal__name">
+                      <div className="modal__name-item">Имя:</div>
+                      <div className="modal__name-item">Instagram:</div>
+                      <div className="modal__name-item">Отзыв:</div>
+                    </div>
+                    <div className="modal__input">
+                      <div className="modal__input-item">
+                        <input
+                          type="text"
+                          placeholder="Мишка Мишкин"
+                          value={name}
+                          onChange={e => setName(e.target.value)}
+                        />
+                      </div>
+                      <div className="modal__input-item">
+                        <input
+                          type="text"
+                          placeholder="@mishka"
+                          value={link}
+                          onChange={e => setLink(e.target.value)}
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <div className="modal__input-item">
-                    <input
-                      type="text"
-                      placeholder="@mishka"
-                      value={link}
-                      onChange={e => setLink(e.target.value)}
-                    />
+                  <div className="modal__feedback">
+                    <textarea
+                      placeholder="Mishka супер, потому что..."
+                      cols="37"
+                      rows="7"
+                      value={discription}
+                      onChange={e => setDiscription(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <div className="modal__send">
+                    <button
+                      className="button"
+                      onClick={() => onSubmit()}
+                      disabled={!(discription && name && link)}
+                    >
+                      ОТПРАВИТЬ
+                    </button>
                   </div>
                 </div>
-              </div>
-              <div className="modal__feedback">
-                <textarea
-                  placeholder="Mishka супер, потому что..."
-                  cols="37"
-                  rows="7"
-                  value={discription}
-                  onChange={e => setDiscription(e.target.value)}
-                ></textarea>
-              </div>
-            </div>
-            <div className="modal__send">
-              <button
-                className="button"
-                onClick={() => onSubmit()}
-                disabled={!(discription && name && link)}
-              >
-                ОТПРАВИТЬ
-              </button>
+              ) : (
+                <div className="modal__thanks">
+                  <span className="modal__thanks-text">
+                    СПАСИБО ЗА ВАШ ОТЗЫВ!
+                  </span>
+                </div>
+              )}
             </div>
           </Modal>
         ) : null}

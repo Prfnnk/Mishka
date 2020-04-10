@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
 import Banner from "./components/banner";
@@ -9,12 +9,13 @@ import Contacts from "./components/contacts";
 import Footer from "./components/footer";
 
 const App = () => {
+  const [quantity, setQuantity] = useState(0);
   return (
     <div className="App">
       <div className="wrapper">
-        <Header></Header>
+        <Header quantity={quantity}></Header>
         <Banner></Banner>
-        <Special></Special>
+        <Special quantity={quantity} setQuantity={setQuantity}></Special>
         <About></About>
         <Feedback></Feedback>
         <Contacts></Contacts>

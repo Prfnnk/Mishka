@@ -5,6 +5,17 @@
   align-items: center;
   cursor: pointer;
 
+  &__status {
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
   &:hover {
     color: rgba(0, 0, 0, 0.6);
   }

@@ -53,6 +53,7 @@
       text-decoration: underline;
       text-decoration-color: #62d1ba;
       cursor: pointer;
+      color: #444444;
 
       &:hover {
         color: #46c1ae;
@@ -67,6 +68,11 @@
   }
 
   &__map {
+    margin-left: auto;
+  }
+
+  &__button-block {
+    width: 270px;
     margin-left: auto;
   }
 }
