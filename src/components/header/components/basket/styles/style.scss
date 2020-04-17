@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  color: black;
 
   &__status {
     display: flex;
@@ -32,5 +33,18 @@
     width: 21px;
     height: 18px;
     margin: 0 25px 0 30px;
+  }
+
+  &_disabled {
+    cursor: initial;
+
+    &:hover {
+      opacity: 1;
+      color: black;
+
+      & .cart__img {
+        background-image: url(../Img/cart.svg.png);
+      }
+    }
   }
 }
