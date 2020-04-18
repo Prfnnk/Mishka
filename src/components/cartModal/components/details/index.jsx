@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/style.scss";
 
-const Details = ({
-  quantity,
-  setDetails,
-  name,
-  setName,
-  surname,
-  setSurname,
-  street,
-  setStreet,
-  house,
-  setHouse,
-  apt,
-  setApt,
-}) => {
+const Details = ({ quantity, setDetails, setFullInfo }) => {
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [street, setStreet] = useState("");
+  const [house, setHouse] = useState("");
+  const [apt, setApt] = useState("");
   const price = 990;
+
+  const onSubmit = () => {
+    setDetails("confirm");
+    setFullInfo({
+      name,
+      surname,
+      street,
+      house,
+      apt,
+    });
+  };
   return (
     <div className="modal__wrapper">
       <div className="details__title">Информация о покупателе</div>
@@ -106,7 +109,7 @@ const Details = ({
             </button>
           </div>
           <div className="details__order">
-            <button className="button" onClick={() => setDetails("confirm")}>
+            <button className="button" onClick={() => onSubmit()}>
               Заказать
             </button>
           </div>

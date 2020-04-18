@@ -8,18 +8,8 @@ import Confirmation from "./components/confirmation";
 
 const CartModal = ({ quantity, setQuantity, setOpenCart }) => {
   const [details, setDetails] = useState("cart");
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [street, setStreet] = useState("");
-  const [house, setHouse] = useState("");
-  const [apt, setApt] = useState("");
+  const [fullInfo, setFullInfo] = useState({});
 
-  const fullAddress = {
-    street,
-    house,
-    apt,
-  };
-  console.log(fullAddress);
   const renderModal = () => {
     switch (details) {
       case "cart":
@@ -33,28 +23,13 @@ const CartModal = ({ quantity, setQuantity, setOpenCart }) => {
       case "details":
         return (
           <Details
-            street={street}
-            setStreet={setStreet}
-            house={house}
-            setHouse={setHouse}
-            apt={apt}
-            setApt={setApt}
-            name={name}
-            setName={setName}
-            surname={surname}
-            setSurname={setSurname}
+            setFullInfo={setFullInfo}
             setDetails={setDetails}
             quantity={quantity}
           ></Details>
         );
       default:
-        return (
-          <Confirmation
-            fullAddress={fullAddress}
-            name={name}
-            surname={surname}
-          ></Confirmation>
-        );
+        return <Confirmation fullInfo={fullInfo}></Confirmation>;
     }
   };
   return <Modal onClose={setOpenCart}>{renderModal()}</Modal>;
