@@ -7,7 +7,13 @@ const Details = ({ quantity, setDetails, setFullInfo }) => {
   const [street, setStreet] = useState("");
   const [house, setHouse] = useState("");
   const [apt, setApt] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
   const price = 990;
+
+  const isValid = () => {
+    return !(name && surname && street && house && apt && (email || tel));
+  };
 
   const onSubmit = () => {
     setDetails("confirm");
@@ -49,13 +55,23 @@ const Details = ({ quantity, setDetails, setFullInfo }) => {
           <div className="details__item">
             <div className="details__name">E-mail:</div>
             <div className="details__data">
-              <input type="text" placeholder="mishka@mishka.com" />
+              <input
+                type="text"
+                placeholder="mishka@mishka.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
           </div>
           <div className="details__item">
             <div className="details__name">Телефон:</div>
             <div className="details__data">
-              <input type="text" placeholder="+7" />
+              <input
+                type="text"
+                placeholder="+7"
+                value={tel}
+                onChange={(e) => setTel(e.target.value)}
+              />
             </div>
           </div>
         </div>
@@ -109,7 +125,11 @@ const Details = ({ quantity, setDetails, setFullInfo }) => {
             </button>
           </div>
           <div className="details__order">
-            <button className="button" onClick={() => onSubmit()}>
+            <button
+              className="button"
+              disabled={isValid()}
+              onClick={() => onSubmit()}
+            >
               Заказать
             </button>
           </div>
