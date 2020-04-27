@@ -63,3 +63,16 @@
     }
   }
 }
+@media (max-width: 425px) {
+  .footer {
+    justify-content: center;
+    padding: 25px;
+    height: auto;
+    &__logo {
+      display: none;
+    }
+    &__links {
+      margin: 0;
+    }
+  }
+}

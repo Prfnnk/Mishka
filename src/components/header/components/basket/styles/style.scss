@@ -48,3 +48,15 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .cart {
+    display: none;
+    &_show {
+      display: flex;
+    }
+    &__img {
+      margin: 0 25px 0 0;
+    }
+  }
+}

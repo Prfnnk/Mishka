@@ -14,11 +14,36 @@
       background-image: url(../Img/search.svg_hvr.png);
     }
   }
+  &__mobile {
+    width: 20px;
+    height: 14px;
+    background-image: url(../Img/menu.svg.png);
+    background-repeat: no-repeat;
+    display: none;
+  }
 
   &__img {
     width: 18px;
     height: 19px;
     background-image: url(../Img/search.svg.png);
     background-repeat: no-repeat;
+  }
+}
+@media (max-width: 425px) {
+  .search {
+    border: none;
+    width: 20px;
+    &__img {
+      display: none;
+    }
+    &__mobile {
+      display: block;
+
+      &_close {
+        background-image: url(../Img/menu-close.svg.png);
+        height: 21px;
+        width: 20px;
+      }
+    }
   }
 }

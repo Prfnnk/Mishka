@@ -71,3 +71,27 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .banner__footer-items {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 425px) {
+  .banner {
+    &__inner {
+      min-height: 500px;
+      margin-bottom: 90px;
+    }
+
+    &__footer {
+      &-items {
+        display: block;
+        padding: 0;
+      }
+      &-item {
+        width: 100%;
+      }
+    }
+  }
+}

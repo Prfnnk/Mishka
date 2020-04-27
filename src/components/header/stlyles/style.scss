@@ -18,3 +18,17 @@
     opacity: 0.6;
   }
 }
+
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 0;
+  }
+}
+@media (max-width: 425px) {
+  .logo {
+    margin-left: auto;
+  }
+  .header {
+    padding: 0px 50px;
+  }
+}

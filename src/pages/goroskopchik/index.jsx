@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { format } from "date-fns";
 import Corona from "./Img/corona.png";
 

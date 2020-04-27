@@ -3,7 +3,7 @@ import cn from "classnames";
 import "./styles/style.scss";
 import { wordEnds } from "../../../../utils/wordEnds";
 
-const Basket = ({ quantity, setOpenCart }) => {
+const Basket = ({ quantity, setOpenCart, show }) => {
   const openCart = () => {
     if (quantity !== 0) {
       setOpenCart(true);
@@ -11,7 +11,7 @@ const Basket = ({ quantity, setOpenCart }) => {
   };
   return (
     <div
-      className={cn("cart", { cart_disabled: quantity === 0 })}
+      className={cn("cart", { cart_disabled: quantity === 0, cart_show: show })}
       onClick={() => openCart()}
     >
       <div className="cart__img"></div>

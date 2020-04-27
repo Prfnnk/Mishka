@@ -1,13 +1,12 @@
 import React from "react";
 import "./styles/style.scss";
+import TripleSet from "./img/triple-set.png";
 
 const Special = ({ quantity, setQuantity }) => {
   return (
     <div className="special">
       <div className="special__header">
-        <div className="special__sign">
-          ТОВАР <br /> НЕДЕЛИ
-        </div>
+        <div className="special__sign">ТОВАР НЕДЕЛИ</div>
         <div className="special__title">Вязаные корзинки</div>
       </div>
       <div className="special__wrapper">
@@ -28,6 +27,9 @@ const Special = ({ quantity, setQuantity }) => {
             <div className="special__item-name">Высота:</div>
             <div className="special__item-discription">15 см</div>
           </div>
+        </div>
+        <div className="special__image">
+          <img src={TripleSet} alt="Корзинки" />
         </div>
         <div className="special__price">Цена: 990 руб.</div>
         {quantity < 1 ? (

@@ -1,0 +1,24 @@
+.mobile {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  //   min-height: 315px;
+
+  &-item {
+    height: 80px;
+    border-bottom: 1px solid #8080803b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+  }
+
+  &__img {
+    width: 18px;
+    height: 19px;
+    background-image: url(../../header/components/search/Img/search.svg.png);
+    background-repeat: no-repeat;
+    margin-right: 25px;
+  }
+}

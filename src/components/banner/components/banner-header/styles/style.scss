@@ -10,6 +10,10 @@
 
   &__menu {
     display: flex;
+
+    &_tablet {
+      display: none;
+    }
   }
 
   &__menu-item {
@@ -28,5 +32,33 @@
   &__delivery {
     margin-left: auto;
     color: rgba(#444444, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner__menu {
+    display: none;
+
+    &_tablet {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .banner {
+    &__header {
+      display: none;
+    }
+    &__inner {
+      background-size: 190%;
+      background-position: top center;
+      background-repeat: no-repeat;
+    }
+    &__title {
+      font-size: 24px;
+      width: 100%;
+      padding: 0 50px;
+    }
   }
 }
