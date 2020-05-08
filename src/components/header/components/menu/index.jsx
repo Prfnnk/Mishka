@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/style.scss";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
@@ -10,9 +11,9 @@ const Menu = () => {
         </a>
       </div>
       <div className="menu__item">
-        <a href="/" className="menu__link">
+        <Link to="/mishka/form/" className="menu__link">
           Вязание на заказ
-        </a>
+        </Link>
       </div>
     </menu>
   );

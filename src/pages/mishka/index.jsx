@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Header from "../../components/header";
-import Banner from "../../components/banner";
-import Special from "../../components/special";
-import About from "../../components/about";
-import Feedback from "../../components/feedback";
-import Contacts from "../../components/contacts";
 import Footer from "../../components/footer";
 import MobileMenu from "../../components/mobile-menu";
+import { BrowserRouter, Route } from "react-router-dom";
+import Form from "../../components/form";
+import Catalog from "../../components/catalog";
 
 import CartModal from "../../components/cartModal";
+import MainMishka from "./main-page";
 
 const MishkaPage = () => {
   const [quantity, setQuantity] = useState(0);
@@ -25,12 +24,17 @@ const MishkaPage = () => {
       {openMenu ? (
         <MobileMenu quantity={quantity} setOpenCart={setOpenCart}></MobileMenu>
       ) : null}
-
-      <Banner></Banner>
-      <Special quantity={quantity} setQuantity={setQuantity}></Special>
-      <About></About>
-      <Feedback></Feedback>
-      <Contacts></Contacts>
+      {/* <Route
+        path={"/mishka"}
+        component={
+          <MainMishka
+            quantity={quantity}
+            setQuantity={setQuantity}
+          ></MainMishka>
+        }
+      />
+      <Route exact path={"/mishka/form/"} component={Form} /> */}
+      <Catalog></Catalog>
       <Footer></Footer>
       {openCart ? (
         <CartModal

@@ -1,7 +1,356 @@
 .form {
-  font-size: 150px;
+  font-family: "Roboto", sans-serif;
+  &__description {
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+  &__block {
+    min-height: 250px;
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 50px 120px;
+    justify-content: space-between;
+
+    &_color {
+      background-color: #f1f1f1;
+    }
+  }
+  &__header {
+    min-height: 260px;
+    background-color: #f1f1f1;
+    position: relative;
+    &-wrapper {
+      width: 100%;
+      height: 100%;
+      padding: 25px 50px;
+    }
+
+    &-img {
+      background-image: url("../img/zigzag-fill-desktop.svg.png");
+      height: 34px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+    }
+  }
+  &__links {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+  }
   &-wrapper {
     width: 100%;
     height: 100%;
+  }
+  &__title {
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 60px;
+  }
+  &__order {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 110px;
+    align-items: center;
+  }
+  &__button {
+    width: 30%;
+  }
+  &__text {
+    font-weight: initial;
+    font-size: 16px;
+    color: #444444;
+  }
+}
+.block {
+  &__text {
+    margin-left: 25px;
+  }
+  &__name {
+    color: #63d1bb;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    width: calc(100% - 110px);
+
+    & textarea {
+      font-size: 18px;
+      border: 2px solid black;
+      width: 100%;
+      font-family: "Roboto", sans-serif;
+      padding: 10px;
+      outline: none;
+
+      &:focus {
+        border: 2px solid #63d1bb;
+      }
+    }
+    &-name {
+      width: 20%;
+      text-align: left;
+      margin-right: 30px;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      position: relative;
+
+      &:last-child {
+        margin-top: 0;
+      }
+      &_color {
+        width: 30%;
+        margin-bottom: 0;
+      }
+    }
+    &_color {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+.input {
+  width: 100%;
+  position: relative;
+  &_tel {
+    &:after {
+      content: "";
+      position: absolute;
+      background-image: url(../img/phone.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 24px;
+      width: 25px;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  &_mail {
+    &:after {
+      content: "";
+      position: absolute;
+      background-image: url(../img/mail.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 21px;
+      width: 32px;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+
+  & input {
+    font-size: 18px;
+    width: 100%;
+    height: 54px;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    background: none;
+
+    &:focus {
+      border-bottom: 2px solid #63d1bb;
+    }
+  }
+}
+
+.radio {
+  &__input {
+    display: none;
+    &:checked + label:after {
+      background-color: #63d1bb;
+    }
+  }
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  }
+}
+.checkbox {
+  &__input {
+    display: none;
+    &:checked + label:after {
+      background-image: url(../img/checked.png);
+    }
+  }
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 33px;
+      height: 22px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .form {
+    &__block {
+      padding: 50px;
+    }
+    &__description {
+      padding-left: 50px;
+      justify-content: left;
+    }
+    &__order {
+      padding-left: 0;
+    }
+  }
+  .block {
+    &__input {
+      width: calc(100% - 160px);
+
+      &-name {
+        width: 30%;
+      }
+
+      &-item {
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &_color {
+          width: 50%;
+          margin-bottom: 30px;
+
+          &:nth-child(5) {
+            margin-bottom: 0;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .form {
+    &__header {
+      min-height: 190px;
+      &-img {
+        display: none;
+      }
+      &-wrapper {
+        padding: 25px;
+      }
+    }
+    &__links {
+      display: none;
+    }
+    &__title {
+      font-size: 25px;
+    }
+    &__description {
+      font-size: 14px;
+      padding-left: 25px;
+      text-align: left;
+      line-height: 20px;
+      margin: 30px 0;
+    }
+    &__block {
+      display: block;
+      padding: 25px;
+      min-height: 190px;
+
+      &_color {
+        background-color: white;
+      }
+    }
+    &__text {
+      display: none;
+    }
+    &__button {
+      width: 100%;
+    }
+  }
+  .block {
+    &__name {
+      flex-direction: row;
+      position: relative;
+      &::after {
+        content: "";
+        background-image: url(../img/line.png);
+        width: 198px;
+        height: 1px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 9px;
+        right: 0;
+        position: absolute;
+      }
+    }
+    &__input {
+      width: 100%;
+
+      & textarea {
+        margin-top: 30px;
+      }
+
+      & input {
+        font-size: 17px;
+      }
+
+      &_color {
+        display: block;
+      }
+      &-item {
+        margin-bottom: 0;
+        margin-top: 30px;
+        display: block;
+
+        &_mobile {
+          display: flex;
+        }
+
+        &:last-child {
+          margin-top: 30px;
+        }
+
+        &_color {
+          background-color: white;
+        }
+      }
+    }
+    &__text {
+      font-size: 17px;
+      text-align: left;
+    }
   }
 }
