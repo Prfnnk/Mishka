@@ -25,7 +25,13 @@ const MishkaPage = () => {
         <MobileMenu quantity={quantity} setOpenCart={setOpenCart}></MobileMenu>
       ) : null}
       <Switch>
-        <Route exact path={"/mishka/"} component={MainMishka} />
+        <Route
+          exact
+          path={"/mishka/"}
+          component={() => (
+            <MainMishka quantity={quantity} setQuantity={setQuantity} />
+          )}
+        />
         <Route exact path={"/mishka/form/"} component={Form} />
         <Route exact path={"/mishka/catalog/"} component={Catalog} />
       </Switch>
