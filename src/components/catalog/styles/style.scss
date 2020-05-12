@@ -1,17 +1,43 @@
 .catalog {
   font-family: "Roboto", sans-serif;
+  &__details {
+    padding: 50px 0 50px 50px;
+    justify-content: space-around;
+    &-title {
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+    }
+    &-logo {
+      background-image: url(../img/video-logo.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 32px;
+      height: 22px;
+    }
+    &-description {
+      text-align: left;
+      line-height: 30px;
+      font-size: 16px;
+    }
+    &-button {
+      width: 230px;
+    }
+  }
   &__range {
     min-height: 810px;
     padding: 50px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 40px;
 
     &-item {
       width: 318px;
-      height: 660px;
+
       border: 1px solid #d3d2d2;
       cursor: pointer;
+      margin-bottom: 30px;
 
       &:hover {
         box-shadow: 0 0 10px grey;
@@ -32,16 +58,53 @@
       width: 100%;
       height: 462px;
 
-      &_rabbit {
-        background-image: url(../img/pic-1.png);
-      }
-      &_small {
-        background-image: url(../img/pic-2.png);
-      }
-      &_big {
-        background-image: url(../img/pic-3.png);
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
+  }
+  &__video {
+    width: 100%;
+    border: 1px solid #d3d2d2;
+    display: flex;
+    position: relative;
+
+    &-play {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        cursor: pointer;
+      }
+    }
+    &-block {
+      padding: 0 50px 70px 50px;
+      min-height: 440px;
+
+      display: flex;
+      justify-content: center;
+    }
+    &-link {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      & video {
+        width: 680px;
+      }
+    }
+  }
+  &__details {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .range {

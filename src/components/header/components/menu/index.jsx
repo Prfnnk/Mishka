@@ -6,9 +6,9 @@ const Menu = () => {
   return (
     <menu className="menu">
       <div className="menu__item">
-        <a href="/form/" className="menu__link">
+        <Link to="/mishka/catalog/" className="menu__link">
           Каталог товаров
-        </a>
+        </Link>
       </div>
       <div className="menu__item">
         <Link to="/mishka/form/" className="menu__link">

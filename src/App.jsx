@@ -11,8 +11,8 @@ const App = () => {
       <div className="wrapper">
         <BrowserRouter>
           <Route exact path={"/"} component={MainPage} />
-          <Route exact path={"/mishka/"} component={MishkaPage} />
-          <Route exact path={"/corona/"} component={SIR} />
+          <Route path={"/mishka"} component={MishkaPage} />
+          <Route exact path={"/corona"} component={SIR} />
         </BrowserRouter>
       </div>
     </div>

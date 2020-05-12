@@ -1,6 +1,50 @@
 import React from "react";
 import "./styles/style.scss";
+import Poster from "./img/video-desktop.png";
+import Play from "./img/play.png";
+import Rabbit from "./img/pic-1.png";
+import SmallBasket from "./img/pic-2.png";
+import BigBasket from "./img/pic-3.png";
+import Napkin from "./img/napkin_cut.jpg";
+import Carpet from "./img/carpet_cut.jpg";
 
+const goodsArr = [
+  {
+    id: 1,
+    img: Rabbit,
+    title: "Зайчик-попрыгайчик",
+    description: "Рост 30 см, вес 200 г",
+    price: "1 200",
+  },
+  {
+    id: 2,
+    img: SmallBasket,
+    title: "Корзинка для белья",
+    description: "Диаметр 15 см, высота 10 см",
+    price: "690",
+  },
+  {
+    id: 3,
+    img: BigBasket,
+    title: "Большая корзинка для игрушек",
+    description: "Диаметр 30 см, высота 30 см",
+    price: "1 500",
+  },
+  {
+    id: 4,
+    img: Napkin,
+    title: "Декоративная салфетка",
+    description: "Минимальный размер 50х50см",
+    price: "от 590",
+  },
+  {
+    id: 5,
+    img: Carpet,
+    title: "Большой ковер напольный",
+    description: "Ширина 60 см, длина 120 см",
+    price: "1 700",
+  },
+];
 const Catalog = () => {
   return (
     <div className="catalog-wrapper">
@@ -25,33 +69,46 @@ const Catalog = () => {
           <div className="form__header-img"></div>
         </div>
         <div className="catalog__range">
-          <div className="catalog__range-item">
-            <div className="catalog__range-img catalog__range-img_rabbit"></div>
-            <div className="range__text">
-              <div className="range__title">Зайчик-попрыгайчик</div>
-              <div className="range__description">Рост 30 см, вес 200 г</div>
-            </div>
-            <div className="range__price">1 200 руб.</div>
-          </div>
-          <div className="catalog__range-item">
-            <div className="catalog__range-img catalog__range-img_small"></div>
-            <div className="range__text">
-              <div className="range__title">Корзинка для белья</div>
-              <div className="range__description">
-                Диаметр 15 см, высота 10 см
+          {goodsArr.map((item) => {
+            return (
+              <div key={item.id} className="catalog__range-item">
+                <div className="catalog__range-img">
+                  <img src={item.img} alt={item.title} />
+                </div>
+                <div className="range__text range__text_last">
+                  <div className="range__title">{item.title}</div>
+                  <div className="range__description">{item.description}</div>
+                </div>
+                <div className="range__price range__price_last">
+                  {item.price} руб.
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="catalog__video-block">
+          <div className="catalog__video">
+            <div className="catalog__video-link">
+              <video
+                src="https://www.youtube.com/watch?v=loOWKm8GW6A"
+                controls
+                poster={Poster}
+              ></video>
+              <div className="catalog__video-play">
+                <img src={Play} alt="запуск видео" />
               </div>
             </div>
-            <div className="range__price">690 руб.</div>
-          </div>
-          <div className="catalog__range-item">
-            <div className="catalog__range-img catalog__range-img_big"></div>
-            <div className="range__text range__text_last">
-              <div className="range__title">Большая корзинка для игрушек</div>
-              <div className="range__description">
-                Диаметр 30 см, высота 30 см
+            <div className="catalog__details">
+              <div className="catalog__details-logo"></div>
+              <div className="catalog__details-title">Процесс производства</div>
+              <div className="catalog__details-description">
+                По просьбам наших любимых фолловеров мы сняли для вас подробное
+                видео о том, как появляются наши товары.
+              </div>
+              <div className="catalog__details-button">
+                <div className="button">СДЕЛАТЬ ЗАКАЗ</div>
               </div>
             </div>
-            <div className="range__price range__price_last">1 500 руб.</div>
           </div>
         </div>
       </div>

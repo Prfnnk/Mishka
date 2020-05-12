@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import MobileMenu from "../../components/mobile-menu";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Form from "../../components/form";
 import Catalog from "../../components/catalog";
 
@@ -24,17 +24,13 @@ const MishkaPage = () => {
       {openMenu ? (
         <MobileMenu quantity={quantity} setOpenCart={setOpenCart}></MobileMenu>
       ) : null}
-      {/* <Route
-        path={"/mishka"}
-        component={
-          <MainMishka
-            quantity={quantity}
-            setQuantity={setQuantity}
-          ></MainMishka>
-        }
-      />
-      <Route exact path={"/mishka/form/"} component={Form} /> */}
-      <Catalog></Catalog>
+      <Switch>
+        <Route exact path={"/mishka/"} component={MainMishka} />
+        <Route exact path={"/mishka/form/"} component={Form} />
+        <Route exact path={"/mishka/catalog/"} component={Catalog} />
+      </Switch>
+
+      {/* <Catalog></Catalog> */}
       <Footer></Footer>
       {openCart ? (
         <CartModal
