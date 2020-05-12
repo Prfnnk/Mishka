@@ -42,10 +42,10 @@
       &:hover {
         box-shadow: 0 0 10px grey;
         & .range__title {
-          opacity: 60%;
+          opacity: 0.6;
         }
         & .range__price {
-          opacity: 60%;
+          opacity: 0.6;
 
           &::after {
             background-image: url(../img/cart_color.png);
@@ -85,18 +85,17 @@
     }
     &-block {
       padding: 0 50px 70px 50px;
-      min-height: 440px;
 
       display: flex;
       justify-content: center;
     }
     &-link {
       display: flex;
-      justify-content: flex-end;
+      width: 60%;
       position: relative;
 
       & video {
-        width: 680px;
+        width: 100%;
       }
     }
   }
