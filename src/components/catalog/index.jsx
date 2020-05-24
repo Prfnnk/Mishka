@@ -75,12 +75,14 @@ const Catalog = () => {
                 <div className="catalog__range-img">
                   <img src={item.img} alt={item.title} />
                 </div>
-                <div className="range__text range__text_last">
-                  <div className="range__title">{item.title}</div>
-                  <div className="range__description">{item.description}</div>
-                </div>
-                <div className="range__price range__price_last">
-                  {item.price} руб.
+                <div className="range__about">
+                  <div className="range__text range__text_last">
+                    <div className="range__title">{item.title}</div>
+                    <div className="range__description">{item.description}</div>
+                  </div>
+                  <div className="range__price range__price_last">
+                    {item.price} руб.
+                  </div>
                 </div>
               </div>
             );
@@ -99,8 +101,13 @@ const Catalog = () => {
               </div>
             </div>
             <div className="catalog__details">
-              <div className="catalog__details-logo"></div>
-              <div className="catalog__details-title">Процесс производства</div>
+              <div className="catalog__details-header">
+                <div className="catalog__details-logo"></div>
+                <div className="catalog__details-title">
+                  Процесс производства
+                </div>
+              </div>
+
               <div className="catalog__details-description">
                 По просьбам наших любимых фолловеров мы сняли для вас подробное
                 видео о том, как появляются наши товары.

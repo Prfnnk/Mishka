@@ -56,7 +56,7 @@
 
     &-img {
       width: 100%;
-      height: 462px;
+      height: 100%;
 
       & img {
         width: 100%;
@@ -144,6 +144,61 @@
       position: absolute;
       right: 0;
       top: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog {
+    &__range {
+      &-item {
+        width: 100%;
+        display: flex;
+        max-height: 333px;
+      }
+      &-img {
+        width: 50%;
+      }
+    }
+
+    &__video {
+      display: block;
+
+      &-link {
+        width: 100%;
+        height: 443px;
+      }
+    }
+
+    &__details {
+      width: 100%;
+      align-items: flex-start;
+      padding: 50px;
+
+      &-header {
+        display: flex;
+        margin-bottom: 40px;
+      }
+
+      &-logo {
+        margin-right: 30px;
+      }
+
+      &-description {
+        margin-bottom: 40px;
+      }
+
+      &-button {
+        width: 100%;
+      }
+    }
+  }
+  .range {
+    &__about {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      justify-content: space-between;
     }
   }
 }
