@@ -165,6 +165,12 @@
       border-bottom: 2px solid #63d1bb;
     }
   }
+
+  &_error {
+    & input {
+      border-color: red;
+    }
+  }
 }
 
 .radio {

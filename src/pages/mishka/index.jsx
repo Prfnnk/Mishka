@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import MobileMenu from "../../components/mobile-menu";
@@ -13,6 +13,13 @@ const MishkaPage = () => {
   const [quantity, setQuantity] = useState(0);
   const [openCart, setOpenCart] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.screenTop = 0;
+    }, 2000);
+  }, []);
+
   return (
     <>
       <Header
