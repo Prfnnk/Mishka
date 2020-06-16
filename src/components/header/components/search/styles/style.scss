@@ -29,7 +29,7 @@
     background-repeat: no-repeat;
   }
 }
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .search {
     border: none;
     width: 20px;

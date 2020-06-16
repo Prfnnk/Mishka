@@ -80,7 +80,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .contacts {
     display: block;
     padding: 71px 0px 50px 0px;
@@ -118,7 +118,7 @@
     }
   }
 }
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .contacts {
     padding: 40px 0;
     &__title {
@@ -132,6 +132,7 @@
     &__info {
       flex-direction: column;
       padding: 0 25px;
+      margin: 0;
     }
     &__item {
       margin-right: 0;
@@ -146,6 +147,16 @@
     &__button-block {
       margin-left: 0;
       margin-top: 0;
+    }
+
+    &__map {
+      margin-top: 20px;
+      position: relative;
+      width: 100%;
+
+      & iframe {
+        width: 100%;
+      }
     }
   }
 }

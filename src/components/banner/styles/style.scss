@@ -34,13 +34,17 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .banner__inner {
     background-position: center;
   }
 }
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .banner {
+    &__title {
+      font-size: 24px;
+      width: auto;
+    }
     &__img {
       display: none;
     }

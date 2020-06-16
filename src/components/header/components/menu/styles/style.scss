@@ -29,12 +29,12 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .menu {
     display: none;
   }
 }
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .menu {
     display: none;
   }

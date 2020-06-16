@@ -226,7 +226,7 @@
     }
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .form {
     &__block {
       padding: 50px;
@@ -266,7 +266,7 @@
     }
   }
 }
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .form {
     &__header {
       min-height: 190px;

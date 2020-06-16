@@ -72,12 +72,12 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .banner__footer-items {
     padding: 0 50px;
   }
 }
-@media (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .banner {
     &__inner {
       min-height: 500px;
