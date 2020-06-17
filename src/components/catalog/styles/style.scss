@@ -223,11 +223,19 @@
 
     &__details {
       padding: 25px;
+      width: 100%;
+
+      &-button {
+        width: 100%;
+        max-width: 230px;
+      }
     }
 
     &__video {
+      display: block;
       &-link {
         height: auto;
+        width: 100%;
       }
     }
   }
